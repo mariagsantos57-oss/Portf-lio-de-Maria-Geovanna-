@@ -1,0 +1,168 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    font-family: Georgia, serif;
+
+    background: linear-gradient(-45deg, #f06acb, #f477b5);
+
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center {
+    width: 400px;
+
+    background: white;
+
+    border-radius: 10px;
+
+    padding: 30px 40px;
+
+    box-shadow: 0 10px 30px rgba(90, 20, 20, 0.4);
+}
+
+.center h1 {
+    text-align: center;
+
+    padding: 10px 0 20px;
+
+    border-bottom: 1px solid rgb(7, 3, 65);
+}
+
+form .txt_field {
+    position: relative;
+
+    border-bottom: 2px solid #adadad;
+
+    margin: 30px 0;
+}
+
+.txt_field input {
+    width: 100%;
+
+    padding: 0 5px;
+
+    height: 40px;
+
+    font-size: 16px;
+
+    border: none;
+
+    background: none;
+
+    outline: none;
+}
+
+.txt_field label {
+    position: absolute;
+
+    left: 5px;
+    top: 50%;
+
+    color: #999;
+
+    transform: translateY(-50%);
+
+    font-size: 16px;
+
+    pointer-events: none;
+
+    transition: 0.3s;
+}
+
+.txt_field input:focus ~ label,
+.txt_field input:valid ~ label {
+    top: -5px;
+
+    color: brown;
+}
+
+.esqueceu {
+    text-align: right;
+
+    margin-top: -15px;
+
+    margin-bottom: 20px;
+}
+
+.esqueceu a {
+    color: blue;
+
+    text-decoration: none;
+
+    font-size: 14px;
+}
+
+.botoes {
+    display: flex;
+
+    gap: 15px;
+
+    width: 100%;
+
+    margin-top: 25px;
+}
+
+.botoes input {
+    flex: 1;
+
+    height: 50px;
+
+    border-radius: 25px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+.btn-conectar {
+    border: 1px solid #2980b9;
+
+    background: #2980b9;
+
+    color: white;
+}
+
+.btn-conectar:hover {
+    background: #1f6692;
+}
+
+.btn-cancelar {
+    border: 1px solid #4d7acc;
+
+    background: #0d52d1;
+
+    color: white;
+}
+
+.btn-cancelar:hover {
+    background: #555;
+}
+
+.signup_link {
+    margin: 30px 0 0;
+
+    text-align: center;
+
+    font-size: 16px;
+}
+
+.signup_link a {
+    text-decoration: underline;
+
+    color: blue;
+
+    cursor: pointer;
+}

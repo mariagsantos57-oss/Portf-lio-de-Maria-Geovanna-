@@ -1,0 +1,193 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#d774a6;
+    font-family:Georgia, serif;
+}
+
+
+
+nav{
+    display:flex;
+    justify-content:space-around;
+    padding:30px;
+}
+
+nav a{
+    text-decoration:none;
+    color:white;
+    border:1px solid white;
+    padding:15px 30px;
+    border-radius:15px;
+    backdrop-filter:blur(5px);
+}
+
+
+
+.hero{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:80px;
+    padding:50px;
+}
+
+.foto img{
+    width:400px;
+    border-radius:20px;
+}
+
+.texto h2{
+    background:black;
+    color:white;
+    display:inline-block;
+    padding:10px 20px;
+    font-size:50px;
+    text-transform:lowercase;
+}
+
+.texto h1{
+    color:white;
+    font-size:140px;
+    line-height:120px;
+}
+
+.texto h3{
+    margin-top:30px;
+    font-size:50px;
+}
+
+.texto p{
+    font-size:40px;
+    font-family:cursive;
+    color:white;
+}
+
+
+
+.card{
+    width:80%;
+    margin:30px auto;
+    background:rgba(255,255,255,0.2);
+    padding:40px;
+    border-radius:20px;
+    border:2px solid rgba(255,255,255,0.5);
+}
+
+.card h2{
+    color:#c54b8d;
+    margin-bottom:20px;
+    font-size:40px;
+}
+
+.card p,
+.card li{
+    font-size:24px;
+}
+
+.card ul{
+    margin-left:30px;
+}
+
+
+.redes{
+    display:flex;
+    justify-content:center;
+    gap:60px;
+    margin:40px 0;
+}
+
+.redes a{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-decoration:none;
+    color:black;
+}
+
+.redes img{
+    width:60px;
+    height:60px;
+}
+
+.redes p{
+    margin-top:10px;
+}
+.areas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.lista-areas{
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0 0;
+}
+
+.lista-areas li{
+    margin: 15px 0;
+}
+
+.lista-areas a{
+    display: inline-block;
+    width: 180px;
+    padding: 15px;
+    border: 1px solid white;
+    border-radius: 15px;
+    text-decoration: none;
+    color: white;
+}
+footer{
+    text-align: center;
+    padding: 30px;
+    color: white;
+    font-size: 18px;
+    border-top: 1px solid rgba(255,255,255,0.3);
+    margin-top: 50px;
+}
+.frase-final{
+    text-align: center;
+    margin: 80px auto;
+    padding: 30px;
+}
+
+.frase-final h2{
+    font-size: 32px;
+    color: white;
+    margin-bottom: 25px;
+    font-family: Georgia, serif;
+}
+
+.card-frase{
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 35px;
+    border: 2px solid rgba(255,255,255,0.8);
+    border-radius: 25px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(5px);
+}
+
+.card-frase p{
+    font-size: 24px;
+    color: white;
+    font-style: italic;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.frase-final span{
+    display: block;
+    margin-top: 20px;
+    color: #ffe6f2;
+    font-size: 18px;
+    font-style: italic;
+}

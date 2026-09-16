@@ -1,0 +1,70 @@
+body {
+    background: linear-gradient(-45deg, pink, white);
+}
+
+header img {
+    width: 300px;
+    height: 410px;
+    border: 30px rgb(163, 86, 115);
+    border-radius: 5%;
+    text-align: center;
+    margin-inline: 70px;
+}
+
+h1 {
+    color: rgb(209, 26, 169);
+    align-items: initial;
+    text-align: center;
+}
+
+
+
+.atividades {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.atividades img {
+    width: 300px;
+    height: 410px;
+    border-radius: 5%;
+    margin-inline: 20px;
+}
+
+
+.atividade-escolhida {
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 2px solid rgb(209, 26, 169);
+    text-align: center;
+}
+
+.atividade-escolhida h2 {
+    color: rgb(209, 26, 169);
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.atividade-destaque {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.atividade-destaque img {
+    width: 400px;
+    max-width: 90%;
+    border-radius: 5%;
+}
+
+.informacoes {
+    margin-top: 25px;
+    font-size: 18px;
+    text-align: left;
+}
+
+.informacoes p {
+    margin: 15px 0;
+}

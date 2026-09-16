@@ -1,0 +1,145 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#ececec;
+    font-family:'Poppins',sans-serif;
+    display:flex;
+    justify-content:center;
+    padding:40px;
+}
+
+.caderno{
+    background:white;
+    width:1100px;
+    min-height:100vh;
+    border-radius:25px;
+    padding:40px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+    position:relative;
+}
+
+
+
+.caderno::before{
+    content:"";
+    position:absolute;
+    left:-20px;
+    top:0;
+    width:20px;
+    height:100%;
+    background:
+    repeating-radial-gradient(
+        circle,
+        #666 0px,
+        #666 8px,
+        transparent 9px,
+        transparent 30px
+    );
+}
+
+h1{
+    text-align:center;
+    font-family:'Playfair Display',serif;
+    font-size:55px;
+    margin-bottom:30px;
+}
+
+.conteudo{
+    display:flex;
+    gap:50px;
+}
+
+.texto{
+    width:65%;
+}
+
+.texto h2{
+    font-size:70px;
+    font-family:'Playfair Display',serif;
+    margin-bottom:20px;
+}
+
+.texto span{
+    display:block;
+    font-family:'Dancing Script',cursive;
+    color:#f29bb2;
+    font-size:90px;
+}
+
+.texto p{
+    margin-bottom:20px;
+    text-align:justify;
+    line-height:1.8;
+    font-size:18px;
+}
+
+.lado-direito{
+    width:35%;
+}
+
+.polaroid{
+    background:white;
+    padding:15px;
+    transform:rotate(-3deg);
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+.polaroid img{
+    width:100%;
+    border-radius:5px;
+}
+
+.polaroid p{
+    text-align:center;
+    margin-top:10px;
+    color:#d97793;
+    font-family:'Dancing Script',cursive;
+    font-size:24px;
+}
+
+.adesivo{
+    text-align:center;
+    font-size:120px;
+    margin:40px 0;
+}
+
+.sonhos{
+    background:#fde7ee;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 10px rgba(0,0,0,0.1);
+}
+
+.sonhos h3{
+    font-family:'Dancing Script',cursive;
+    font-size:40px;
+    text-align:center;
+    margin-bottom:15px;
+}
+
+.sonhos ul{
+    list-style:none;
+}
+
+.sonhos li{
+    margin:10px 0;
+    font-size:18px;
+}
+
+.sonhos li::before{
+    content:"♥ ";
+    color:#ff7da9;
+}
+
+body::after{
+    content:"♡ ♡ ♡ ♡ ♡";
+    position:fixed;
+    top:120px;
+    right:100px;
+    color:#ff9bb7;
+    font-size:30px;
+}  

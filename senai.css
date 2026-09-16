@@ -1,0 +1,17 @@
+body{
+    background:linear-gradient(-45deg, pink, white )
+}
+header img{
+    width: 300px;
+    height: 500px;
+    border: 30px rgb(163, 86, 115);
+    border-radius: 5%;
+    text-align: center;
+    margin-inline: 70px;
+}
+h1{
+    color:rgb(209, 26, 169);
+    align-items:initial;
+    text-align: center;
+
+}
