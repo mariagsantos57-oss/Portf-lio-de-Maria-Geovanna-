@@ -1,37 +1,42 @@
-const express = require('express');
-const cors = require('cors');
-const sqlite3 = require('sqlite3').verbose();
-const bcrypt = require('bcrypt');
+require("dotenv").config();
+const express = require("express");
+const cors = require("cors");
+const mysql = require("mysql2");
+const bcrypt = require("bcrypt");
+const path = require("path");
 
 const app = express();
 
-// Middlewares: Permitem conexão do frontend e uso de JSON
+// Middlewares
 app.use(cors());
 app.use(express.json());
 
-// 1. CRIAÇÃO E CONEXÃO COM O BANCO DE DADOS
-const db = new sqlite3.Database('./banco.sqlite', (err) => {
+// Servir arquivos estáticos (HTML, CSS, JS, imagens)
+app.use(express.static(path.join(__dirname)));
+
+// ==========================================
+// CONEXÃO COM O BANCO DE DADOS MySQL
+// ==========================================
+const db = mysql.createConnection({
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+    port: process.env.DB_PORT
+});
+
+db.connect((err) => {
     if (err) {
         console.error("Erro ao conectar ao banco de dados:", err.message);
-    } else {
-        console.log("Conectado ao banco de dados SQLite com sucesso!");
+        return;
     }
-});
-
-// 2. CRIAÇÃO DA TABELA DE USUÁRIOS
-db.serialize(() => {
-    db.run(`CREATE TABLE IF NOT EXISTS usuarios (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        nome TEXT NOT NULL,
-        email TEXT UNIQUE NOT NULL,
-        senha TEXT NOT NULL
-    )`);
+    console.log("Conectado ao banco de dados MySQL com sucesso!");
 });
 
 // ==========================================
-// 3. ROTA DE CADASTRO
+// ROTA DE CADASTRO
 // ==========================================
-app.post('/cadastro', async (req, res) => {
+app.post("/cadastro", async (req, res) => {
     const { nome, email, senha } = req.body;
 
     if (!nome || !email || !senha) {
@@ -39,14 +44,15 @@ app.post('/cadastro', async (req, res) => {
     }
 
     try {
-        // Criptografa a senha antes de salvar no banco
         const hashSenha = await bcrypt.hash(senha, 10);
-        
-        const sql = `INSERT INTO usuarios (nome, email, senha) VALUES (?, ?, ?)`;
-        db.run(sql, [nome, email, hashSenha], function(erro) {
+
+        const sql = "INSERT INTO usuarios (nome, email, senha) VALUES (?, ?, ?)";
+        db.query(sql, [nome, email, hashSenha], (erro, resultado) => {
             if (erro) {
-                // Se der erro de UNIQUE, significa que o e-mail já existe
-                return res.status(400).json({ mensagem: "E-mail já cadastrado." });
+                if (erro.code === "ER_DUP_ENTRY") {
+                    return res.status(400).json({ mensagem: "E-mail já cadastrado." });
+                }
+                return res.status(500).json({ mensagem: "Erro ao cadastrar usuário." });
             }
             res.status(201).json({ mensagem: "Cadastro realizado com sucesso!" });
         });
@@ -56,42 +62,40 @@ app.post('/cadastro', async (req, res) => {
 });
 
 // ==========================================
-// 4. ROTA DE LOGIN
+// ROTA DE LOGIN
 // ==========================================
-app.post('/login', (req, res) => {
+app.post("/login", (req, res) => {
     const { email, senha } = req.body;
 
     if (!email || !senha) {
         return res.status(400).json({ mensagem: "Preencha e-mail e senha." });
     }
 
-    // Busca o usuário pelo e-mail no banco de dados
-    const sql = `SELECT * FROM usuarios WHERE email = ?`;
-    db.get(sql, [email], async (erro, usuario) => {
+    const sql = "SELECT * FROM usuarios WHERE email = ?";
+    db.query(sql, [email], async (erro, resultados) => {
         if (erro) {
             return res.status(500).json({ mensagem: "Erro no servidor ao buscar usuário." });
         }
 
-        // Se o usuário não existir no banco
-        if (!usuario) {
+        if (resultados.length === 0) {
             return res.status(400).json({ mensagem: "E-mail não encontrado." });
         }
 
+        const usuario = resultados[0];
+
         try {
-            // Compara a senha digitada com a senha criptografada armazenada
             const senhaValida = await bcrypt.compare(senha, usuario.senha);
 
             if (!senhaValida) {
                 return res.status(400).json({ mensagem: "Senha incorreta." });
             }
 
-            // Login bem-sucedido
-            res.status(200).json({ 
+            res.status(200).json({
                 mensagem: "Login realizado com sucesso!",
-                usuario: { 
-                    id: usuario.id, 
-                    nome: usuario.nome, 
-                    email: usuario.email 
+                usuario: {
+                    id: usuario.id,
+                    nome: usuario.nome,
+                    email: usuario.email
                 }
             });
         } catch (erro) {
@@ -101,9 +105,16 @@ app.post('/login', (req, res) => {
 });
 
 // ==========================================
-// 5. INICIAR O SERVIDOR
+// ROTA PARA PÁGINAS HTML (fallback)
 // ==========================================
-const PORTA = 3000;
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "index.html"));
+});
+
+// ==========================================
+// INICIAR O SERVIDOR
+// ==========================================
+const PORTA = process.env.PORT || 3000;
 app.listen(PORTA, () => {
     console.log(`Servidor rodando em http://localhost:${PORTA}`);
 });
