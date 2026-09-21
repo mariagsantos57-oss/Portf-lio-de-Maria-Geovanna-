@@ -14,7 +14,7 @@ formLogin.addEventListener("submit", async function (event) {
 
     try {
         // Envia os dados para a nova rota de login do servidor
-        const resposta = await fetch("http://localhost:3000/login", {
+        const resposta = await fetch("/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

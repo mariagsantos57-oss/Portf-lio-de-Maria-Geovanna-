@@ -15,7 +15,7 @@ formCadastro.addEventListener("submit", async function (event) {
 
     try {
         // AQUI ESTÁ A MUDANÇA: Apontando para o servidor local na porta 3000
-        const resposta = await fetch("http://localhost:3000/cadastro", {
+        const resposta = await fetch("/cadastro", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
