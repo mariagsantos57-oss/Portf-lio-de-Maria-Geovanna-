@@ -1,20 +1,34 @@
-// Seleciona o corpo da tabela no HTML
+import { supabaseClient } from './supabase-config.js';
+
 const corpoTabela = document.getElementById('corpoTabela');
 
-// Busca os usuários no banco de dados local (localStorage)
-const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+(async function () {
+    const { data: { user } } = await supabaseClient.auth.getUser();
 
-// Para cada usuário cadastrado, cria uma linha na tabela
-usuarios.forEach(function(usuario) {
-    const tr = document.createElement('tr');
-    
-    tr.innerHTML = `
-        <td>${usuario.nome}</td>
-        <td>${usuario.login}</td>
-        <td>${usuario.email}</td>
-        <td>${usuario.senha}</td>
-    `;
-    
-    // Adiciona a linha na tabela
-    corpoTabela.appendChild(tr);
-});
+    if (!user) {
+        window.location.href = "login.html";
+        return;
+    }
+
+    const { data, error } = await supabaseClient
+        .from('profiles')
+        .select('nome, email, created_at')
+        .eq('id', user.id)
+        .single();
+
+    if (error) {
+        console.error("Erro ao buscar perfil:", error.message);
+        return;
+    }
+
+    if (data) {
+        const tr = document.createElement('tr');
+        const dataFormatada = new Date(data.created_at).toLocaleDateString('pt-BR');
+        tr.innerHTML = `
+            <td>${data.nome || ''}</td>
+            <td>${data.email || ''}</td>
+            <td>${dataFormatada}</td>
+        `;
+        corpoTabela.appendChild(tr);
+    }
+})();

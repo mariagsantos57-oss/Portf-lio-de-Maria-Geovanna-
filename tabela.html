@@ -47,24 +47,23 @@
 </head>
 <body>
 
-    <h1>Usuários Cadastrados no Banco de Dados</h1>
+    <h1>Meu Perfil</h1>
 
     <table>
         <thead>
             <tr>
                 <th>Nome</th>
-                <th>Login</th>
                 <th>E-mail</th>
-                <th>Senha</th>
+                <th>Criado em</th>
             </tr>
         </thead>
         <tbody id="corpoTabela">
-            <!-- Os usuários aparecerão aqui dinamicamente -->
         </tbody>
     </table>
 
-    <a href="login.html" class="voltar">Ir para o Login</a>
+    <a href="index.html" class="voltar">Voltar ao Início</a>
 
-    <script src="tabela.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script type="module" src="tabela.js"></script>
 </body>
 </html>

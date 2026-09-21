@@ -1,7 +1,8 @@
+import { supabaseClient } from './supabase-config.js';
+
 const formCadastro = document.getElementById("formCadastro");
 
 formCadastro.addEventListener("submit", async function (event) {
-
     event.preventDefault();
 
     const nome = document.getElementById("nome").value.trim();
@@ -14,36 +15,34 @@ formCadastro.addEventListener("submit", async function (event) {
     }
 
     try {
-        // AQUI ESTÁ A MUDANÇA: Apontando para o servidor local na porta 3000
-        const resposta = await fetch("/cadastro", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                nome: nome,
-                email: email,
-                senha: senha
-            })
+        const { data, error } = await supabaseClient.auth.signUp({
+            email,
+            password: senha,
+            options: {
+                data: {
+                    nome
+                }
+            }
         });
 
-        const dados = await resposta.json();
-
-        if (!resposta.ok) {
-            alert(dados.mensagem);
+        if (error) {
+            if (error.message.includes("already")) {
+                alert("E-mail já cadastrado.");
+            } else {
+                alert("Erro ao cadastrar: " + error.message);
+            }
             return;
         }
 
-        alert(dados.mensagem);
-
+        alert("Cadastro realizado com sucesso!");
         window.location.href = "login.html";
 
     } catch (erro) {
         console.error("Erro:", erro);
-        alert("Não foi possível conectar ao servidor.");
+        alert("Não foi possível conectar. Tente novamente.");
     }
 });
 
-function cancelar() {
+window.cancelar = function () {
     window.location.href = "login.html";
-}
+};
