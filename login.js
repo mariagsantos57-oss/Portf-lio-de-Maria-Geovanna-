@@ -34,5 +34,6 @@ formLogin.addEventListener("submit", async function (event) {
 });
 
 window.cancelar = function () {
-    window.location.href = "index.html";
+    document.getElementById("email").value = "";
+    document.getElementById("senha").value = "";
 };
