@@ -5,18 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script>
-        (async function() {
-            try {
-                const client = window.supabase.createClient(
-                    "https://etptbehghrmofoaxhghp.supabase.co",
-                    "sb_publishable_vayhdKabenv4NTFP7ePP_g_cSe1aaZH"
-                );
-                const { data: { user } } = await client.auth.getUser();
-                if (!user) { window.location.replace("login.html"); }
-            } catch (e) { window.location.replace("login.html"); }
-        })();
+        if (!localStorage.getItem("logado")) {
+            document.documentElement.innerHTML = '';
+            window.location.replace("login.html");
+        }
     </script>
 </head>
 <body>

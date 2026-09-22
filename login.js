@@ -24,7 +24,7 @@ formLogin.addEventListener("submit", async function (event) {
             return;
         }
 
-        alert("Login realizado com sucesso!");
+        localStorage.setItem("logado", "true");
         window.location.href = "index.html";
 
     } catch (erro) {
