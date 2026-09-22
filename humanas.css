@@ -4,7 +4,8 @@ body {
 
 header img {
     width: 300px;
-    height: 410px;
+    max-width: 80%;
+    height: auto;
     border: 30px rgb(163, 86, 115);
     border-radius: 5%;
     text-align: center;
@@ -28,7 +29,8 @@ h1 {
 
 .atividades img {
     width: 300px;
-    height: 410px;
+    max-width: 80%;
+    height: auto;
     border-radius: 5%;
     margin-inline: 20px;
 }
@@ -67,4 +69,46 @@ h1 {
 
 .informacoes p {
     margin: 15px 0;
+}
+
+@media (max-width: 768px) {
+    header img {
+        width: 80%;
+        margin-inline: auto;
+        border-width: 15px;
+    }
+
+    h1 {
+        font-size: 28px;
+        margin: 15px 10px;
+    }
+
+    .atividades img {
+        width: 80%;
+        margin-inline: auto;
+        border-width: 15px;
+    }
+
+    .atividade-escolhida h2 {
+        font-size: 24px;
+    }
+
+    .atividade-destaque img {
+        width: 90%;
+    }
+
+    .informacoes {
+        font-size: 16px;
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    header img {
+        border-width: 10px;
+    }
+
+    .atividades img {
+        border-width: 10px;
+    }
 }

@@ -14,7 +14,8 @@ body{
 
 .caderno{
     background:white;
-    width:1100px;
+    width:90%;
+    max-width:1100px;
     min-height:100vh;
     border-radius:25px;
     padding:40px;
@@ -142,4 +143,88 @@ body::after{
     right:100px;
     color:#ff9bb7;
     font-size:30px;
-}  
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .caderno {
+        padding: 20px;
+        border-radius: 15px;
+    }
+
+    .caderno::before {
+        display: none;
+    }
+
+    h1 {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    .conteudo {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .texto {
+        width: 100%;
+    }
+
+    .texto h2 {
+        font-size: 36px;
+    }
+
+    .texto span {
+        font-size: 48px;
+    }
+
+    .texto p {
+        font-size: 16px;
+    }
+
+    .lado-direito {
+        width: 100%;
+    }
+
+    .adesivo {
+        font-size: 80px;
+        margin: 20px 0;
+    }
+
+    .sonhos h3 {
+        font-size: 28px;
+    }
+
+    body::after {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 5px;
+    }
+
+    .caderno {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    .texto h2 {
+        font-size: 28px;
+    }
+
+    .texto span {
+        font-size: 36px;
+    }
+
+    .texto p {
+        font-size: 14px;
+    }
+}

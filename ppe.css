@@ -36,3 +36,55 @@ td{
 tr{
     height: 85px;
 }
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 32px;
+        margin-top: 20px;
+        margin-bottom: 25px;
+    }
+
+    table {
+        width: 95%;
+    }
+
+    th {
+        font-size: 16px;
+        padding: 12px 8px;
+    }
+
+    td {
+        font-size: 14px;
+        padding: 15px 8px;
+    }
+
+    tr {
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        overflow-x: auto;
+    }
+
+    table {
+        width: 100%;
+        min-width: 500px;
+    }
+
+    h1 {
+        font-size: 26px;
+        padding: 0 10px;
+    }
+
+    th {
+        font-size: 14px;
+        padding: 10px 5px;
+    }
+
+    td {
+        font-size: 12px;
+        padding: 10px 5px;
+    }
+}

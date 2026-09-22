@@ -315,6 +315,38 @@ footer{
         line-height: 1.6;
     }
 
+    /* HERO */
+
+    .hero {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .foto img {
+        width: 80%;
+        max-width: 300px;
+    }
+
+    .texto h2 {
+        font-size: 24px;
+        padding: 8px 15px;
+    }
+
+    .texto h1 {
+        font-size: 48px;
+        line-height: 42px;
+    }
+
+    .texto h3 {
+        font-size: 22px;
+        margin-top: 15px;
+    }
+
+    .texto p {
+        font-size: 20px;
+    }
+
     /* CONTEÚDO */
 
     .container {
@@ -389,6 +421,53 @@ footer{
         margin-bottom: 20px;
     }
 
+    .card h2 {
+        font-size: 24px;
+    }
+
+    .card p, .card li {
+        font-size: 18px;
+    }
+
+    /* REDES SOCIAIS */
+
+    .redes {
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    .redes img {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* LISTA DE ÁREAS */
+
+    .lista-areas a {
+        width: 160px;
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    /* FRASE FINAL */
+
+    .frase-final {
+        margin: 40px auto;
+        padding: 20px;
+    }
+
+    .frase-final h2 {
+        font-size: 24px;
+    }
+
+    .card-frase {
+        padding: 20px;
+    }
+
+    .card-frase p {
+        font-size: 18px;
+    }
+
     /* RODAPÉ */
 
     footer {
@@ -420,6 +499,23 @@ footer{
         font-size: 15px;
     }
 
+    .texto h1 {
+        font-size: 36px;
+        line-height: 32px;
+    }
+
+    .texto h2 {
+        font-size: 20px;
+    }
+
+    .texto h3 {
+        font-size: 18px;
+    }
+
+    .texto p {
+        font-size: 18px;
+    }
+
     header img {
         width: 90%;
     }
@@ -439,6 +535,16 @@ footer{
 
     button {
         width: 100%;
+    }
+
+    .lista-areas a {
+        width: 140px;
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    .card-frase {
+        max-width: 90%;
     }
 
     footer {

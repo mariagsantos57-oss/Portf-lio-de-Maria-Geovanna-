@@ -3,7 +3,8 @@ body{
 }
 header img{
     width: 300px;
-    height: 500px;
+    max-width: 80%;
+    height: auto;
     border: 30px rgb(163, 86, 115);
     border-radius: 5%;
     text-align: center;
@@ -13,5 +14,48 @@ h1{
     color:rgb(209, 26, 169);
     align-items:initial;
     text-align: center;
+}
 
+.atividades {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.atividades img {
+    width: 300px;
+    max-width: 80%;
+    height: auto;
+    border-radius: 5%;
+    margin-inline: 20px;
+}
+
+@media (max-width: 768px) {
+    header img {
+        width: 80%;
+        margin-inline: auto;
+        border-width: 15px;
+    }
+
+    h1 {
+        font-size: 28px;
+        margin: 15px 10px;
+    }
+
+    .atividades img {
+        width: 80%;
+        margin-inline: auto;
+        border-width: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    header img {
+        border-width: 10px;
+    }
+
+    .atividades img {
+        border-width: 10px;
+    }
 }

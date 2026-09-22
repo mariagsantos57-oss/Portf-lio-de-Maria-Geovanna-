@@ -18,7 +18,8 @@ body {
 }
 
 .center {
-    width: 400px;
+    width: 90%;
+    max-width: 400px;
 
     background: white;
 
@@ -27,6 +28,21 @@ body {
     padding: 30px 40px;
 
     box-shadow: 0 10px 30px rgba(90, 20, 20, 0.4);
+}
+
+@media (max-width: 480px) {
+    .center {
+        padding: 20px;
+        border-radius: 8px;
+    }
+
+    .botoes {
+        flex-direction: column;
+    }
+
+    .botoes input {
+        width: 100%;
+    }
 }
 
 .center h1 {
