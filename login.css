@@ -1,39 +1,207 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-
-    font-family: Georgia, serif;
-
-    background: linear-gradient(-45deg, #f06acb, #f477b5);
-
-    height: 100vh;
-
+    font-family: 'Georgia', serif;
+    background: linear-gradient(135deg, #fce4f3 0%, #f8b4d9 50%, #f06acb 100%);
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px;
+}
+
+/* ELEMENTO DECORATIVO MINIMALISTA */
+body::before {
+    content: "";
+    position: fixed;
+    top: -100px;
+    right: -100px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    z-index: 0;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    bottom: -80px;
+    left: -80px;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    z-index: 0;
 }
 
 .center {
     width: 90%;
-    max-width: 400px;
-
-    background: white;
-
-    border-radius: 10px;
-
-    padding: 30px 40px;
-
-    box-shadow: 0 10px 30px rgba(90, 20, 20, 0.4);
+    max-width: 420px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 40px 36px;
+    box-shadow: 0 8px 40px rgba(215, 116, 166, 0.25);
+    position: relative;
+    z-index: 1;
+    border: 1px solid rgba(255, 255, 255, 0.6);
 }
 
+/* LINHA DECORATIVA SUPERIOR */
+.center::before {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, #f06acb, #d774a6);
+    border-radius: 2px;
+    margin: 0 auto 20px;
+}
+
+.center h1 {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 400;
+    color: #4a2040;
+    padding: 0 0 20px;
+    border-bottom: 1px solid rgba(215, 116, 166, 0.2);
+    letter-spacing: 1px;
+}
+
+form .txt_field {
+    position: relative;
+    border-bottom: 2px solid rgba(215, 116, 166, 0.3);
+    margin: 28px 0;
+    transition: border-color 0.3s;
+}
+
+form .txt_field:focus-within {
+    border-bottom-color: #f06acb;
+}
+
+.txt_field input {
+    width: 100%;
+    padding: 0 5px;
+    height: 42px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+    color: #4a2040;
+    font-family: 'Georgia', serif;
+}
+
+.txt_field label {
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    color: #b07a9a;
+    transform: translateY(-50%);
+    font-size: 15px;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.txt_field input:focus ~ label,
+.txt_field input:valid ~ label {
+    top: -8px;
+    font-size: 12px;
+    color: #d774a6;
+}
+
+.esqueceu {
+    text-align: right;
+    margin-top: -12px;
+    margin-bottom: 15px;
+}
+
+.esqueceu a {
+    color: #d774a6;
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.3s;
+}
+
+.esqueceu a:hover {
+    color: #f06acb;
+}
+
+.botoes {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.botoes input {
+    flex: 1;
+    height: 46px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s;
+    font-family: 'Georgia', serif;
+    letter-spacing: 0.5px;
+}
+
+.btn-conectar {
+    border: none;
+    background: linear-gradient(135deg, #f06acb, #d774a6);
+    color: white;
+    box-shadow: 0 4px 15px rgba(240, 106, 203, 0.3);
+}
+
+.btn-conectar:hover {
+    background: linear-gradient(135deg, #e85cb8, #c56a9a);
+    box-shadow: 0 6px 20px rgba(240, 106, 203, 0.4);
+    transform: translateY(-1px);
+}
+
+.btn-cancelar {
+    border: 2px solid rgba(215, 116, 166, 0.3);
+    background: transparent;
+    color: #d774a6;
+}
+
+.btn-cancelar:hover {
+    background: rgba(215, 116, 166, 0.08);
+    border-color: rgba(215, 116, 166, 0.5);
+}
+
+.signup_link {
+    margin: 25px 0 0;
+    text-align: center;
+    font-size: 14px;
+    color: #b07a9a;
+}
+
+.signup_link a {
+    text-decoration: none;
+    color: #d774a6;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.signup_link a:hover {
+    color: #f06acb;
+}
+
+/* RESPONSIVO */
 @media (max-width: 480px) {
     .center {
-        padding: 20px;
-        border-radius: 8px;
+        padding: 30px 24px;
+        border-radius: 16px;
+    }
+
+    .center h1 {
+        font-size: 24px;
     }
 
     .botoes {
@@ -43,142 +211,4 @@ body {
     .botoes input {
         width: 100%;
     }
-}
-
-.center h1 {
-    text-align: center;
-
-    padding: 10px 0 20px;
-
-    border-bottom: 1px solid rgb(7, 3, 65);
-}
-
-form .txt_field {
-    position: relative;
-
-    border-bottom: 2px solid #adadad;
-
-    margin: 30px 0;
-}
-
-.txt_field input {
-    width: 100%;
-
-    padding: 0 5px;
-
-    height: 40px;
-
-    font-size: 16px;
-
-    border: none;
-
-    background: none;
-
-    outline: none;
-}
-
-.txt_field label {
-    position: absolute;
-
-    left: 5px;
-    top: 50%;
-
-    color: #999;
-
-    transform: translateY(-50%);
-
-    font-size: 16px;
-
-    pointer-events: none;
-
-    transition: 0.3s;
-}
-
-.txt_field input:focus ~ label,
-.txt_field input:valid ~ label {
-    top: -5px;
-
-    color: brown;
-}
-
-.esqueceu {
-    text-align: right;
-
-    margin-top: -15px;
-
-    margin-bottom: 20px;
-}
-
-.esqueceu a {
-    color: blue;
-
-    text-decoration: none;
-
-    font-size: 14px;
-}
-
-.botoes {
-    display: flex;
-
-    gap: 15px;
-
-    width: 100%;
-
-    margin-top: 25px;
-}
-
-.botoes input {
-    flex: 1;
-
-    height: 50px;
-
-    border-radius: 25px;
-
-    font-weight: 700;
-
-    cursor: pointer;
-
-    outline: none;
-
-    transition: 0.3s;
-}
-
-.btn-conectar {
-    border: 1px solid #2980b9;
-
-    background: #2980b9;
-
-    color: white;
-}
-
-.btn-conectar:hover {
-    background: #1f6692;
-}
-
-.btn-cancelar {
-    border: 1px solid #4d7acc;
-
-    background: #0d52d1;
-
-    color: white;
-}
-
-.btn-cancelar:hover {
-    background: #555;
-}
-
-.signup_link {
-    margin: 30px 0 0;
-
-    text-align: center;
-
-    font-size: 16px;
-}
-
-.signup_link a {
-    text-decoration: underline;
-
-    color: blue;
-
-    cursor: pointer;
 }
