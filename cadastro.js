@@ -35,7 +35,7 @@ formCadastro.addEventListener("submit", async function (event) {
         }
 
         alert("Cadastro realizado com sucesso!");
-        window.location.href = "login.html";
+        window.location.href = "index.html";
 
     } catch (erro) {
         console.error("Erro:", erro);
@@ -44,5 +44,5 @@ formCadastro.addEventListener("submit", async function (event) {
 });
 
 window.cancelar = function () {
-    window.location.href = "login.html";
+    window.location.href = "index.html";
 };

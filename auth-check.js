@@ -4,6 +4,6 @@ import { supabaseClient } from './supabase-config.js';
     const { data: { user } } = await supabaseClient.auth.getUser();
 
     if (!user) {
-        window.location.href = "login.html";
+        window.location.href = "index.html";
     }
 })();
