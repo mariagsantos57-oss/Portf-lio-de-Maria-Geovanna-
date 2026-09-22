@@ -1,19 +1,59 @@
-body{
-    background:linear-gradient(-45deg, pink, white )
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
-header img{
-    width: 300px;
-    max-width: 80%;
-    height: auto;
-    border: 30px rgb(163, 86, 115);
-    border-radius: 5%;
-    text-align: center;
-    margin-inline: 70px;
+
+body {
+    background: linear-gradient(180deg, #d774a6 0%, #c56a9a 100%);
+    font-family:'Poppins',sans-serif;
+    min-height:100vh;
+    padding:30px 20px;
 }
-h1{
-    color:rgb(209, 26, 169);
-    align-items:initial;
+
+body::before {
+    content: "";
+    position: fixed;
+    top: -150px;
+    right: -150px;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.06);
+    z-index: 0;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    bottom: -120px;
+    left: -120px;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.04);
+    z-index: 0;
+}
+
+h1 {
+    color: white;
+    font-size: 42px;
+    font-weight: 400;
     text-align: center;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 1;
+    margin: 20px 0;
+}
+
+h1::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: rgba(255,255,255,0.5);
+    border-radius: 2px;
+    margin: 12px auto 0;
 }
 
 .atividades {
@@ -21,41 +61,70 @@ h1{
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
+    max-width: 1100px;
+    margin: 25px auto;
+    position: relative;
+    z-index: 1;
 }
 
 .atividades img {
-    width: 300px;
+    width: 280px;
     max-width: 80%;
     height: auto;
-    border-radius: 5%;
-    margin-inline: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    transition: transform 0.3s;
+    border: 3px solid rgba(255,255,255,0.3);
+}
+
+.atividades img:hover {
+    transform: scale(1.03);
+}
+
+.nav-voltar {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.nav-voltar a {
+    display: inline-block;
+    padding: 12px 30px;
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 30px;
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    transition: all 0.3s;
+    background: rgba(255,255,255,0.08);
+}
+
+.nav-voltar a:hover {
+    background: rgba(255,255,255,0.18);
+    border-color: rgba(255,255,255,0.6);
+    transform: translateY(-2px);
 }
 
 @media (max-width: 768px) {
-    header img {
-        width: 80%;
-        margin-inline: auto;
-        border-width: 15px;
-    }
-
     h1 {
         font-size: 28px;
-        margin: 15px 10px;
     }
 
     .atividades img {
         width: 80%;
-        margin-inline: auto;
-        border-width: 15px;
+        border-width: 2px;
     }
 }
 
 @media (max-width: 480px) {
-    header img {
-        border-width: 10px;
+    h1 {
+        font-size: 24px;
     }
 
     .atividades img {
-        border-width: 10px;
+        width: 90%;
     }
 }

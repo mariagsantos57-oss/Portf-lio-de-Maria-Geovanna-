@@ -5,25 +5,51 @@
 }
 
 body{
-    background:#ececec;
+    background: linear-gradient(180deg, #d774a6 0%, #c56a9a 100%);
     font-family:'Poppins',sans-serif;
     display:flex;
     justify-content:center;
     padding:40px;
+    min-height:100vh;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: -150px;
+    right: -150px;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.06);
+    z-index: 0;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    bottom: -120px;
+    left: -120px;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.04);
+    z-index: 0;
 }
 
 .caderno{
-    background:white;
+    background:rgba(255,255,255,0.95);
+    backdrop-filter:blur(20px);
     width:90%;
     max-width:1100px;
     min-height:100vh;
     border-radius:25px;
-    padding:40px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+    padding:50px;
+    box-shadow:0 15px 50px rgba(0,0,0,0.15);
     position:relative;
+    z-index:1;
+    border:1px solid rgba(255,255,255,0.6);
 }
-
-
 
 .caderno::before{
     content:"";
@@ -35,18 +61,32 @@ body{
     background:
     repeating-radial-gradient(
         circle,
-        #666 0px,
-        #666 8px,
+        #d774a6 0px,
+        #d774a6 8px,
         transparent 9px,
         transparent 30px
     );
+    border-radius:10px 0 0 10px;
+}
+
+/* LINHA DECORATIVA SUPERIOR */
+.caderno::after{
+    content:"";
+    display:block;
+    width:60px;
+    height:3px;
+    background:linear-gradient(90deg, #f06acb, #d774a6);
+    border-radius:2px;
+    margin:0 auto 30px;
 }
 
 h1{
     text-align:center;
     font-family:'Playfair Display',serif;
-    font-size:55px;
-    margin-bottom:30px;
+    font-size:48px;
+    margin-bottom:35px;
+    color:#4a2040;
+    letter-spacing:1px;
 }
 
 .conteudo{
@@ -59,23 +99,25 @@ h1{
 }
 
 .texto h2{
-    font-size:70px;
+    font-size:52px;
     font-family:'Playfair Display',serif;
     margin-bottom:20px;
+    color:#4a2040;
 }
 
 .texto span{
     display:block;
     font-family:'Dancing Script',cursive;
-    color:#f29bb2;
-    font-size:90px;
+    color:#f06acb;
+    font-size:72px;
 }
 
 .texto p{
     margin-bottom:20px;
     text-align:justify;
-    line-height:1.8;
-    font-size:18px;
+    line-height:1.9;
+    font-size:17px;
+    color:#5a3050;
 }
 
 .lado-direito{
@@ -86,40 +128,43 @@ h1{
     background:white;
     padding:15px;
     transform:rotate(-3deg);
-    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    box-shadow:0 8px 25px rgba(215,116,166,0.2);
+    border:1px solid rgba(215,116,166,0.1);
 }
 
 .polaroid img{
     width:100%;
-    border-radius:5px;
+    border-radius:8px;
 }
 
 .polaroid p{
     text-align:center;
     margin-top:10px;
-    color:#d97793;
+    color:#d774a6;
     font-family:'Dancing Script',cursive;
-    font-size:24px;
+    font-size:22px;
 }
 
 .adesivo{
     text-align:center;
-    font-size:120px;
-    margin:40px 0;
+    font-size:100px;
+    margin:30px 0;
 }
 
 .sonhos{
-    background:#fde7ee;
+    background:linear-gradient(135deg, #fce4f3, #f8b4d9);
     padding:25px;
-    border-radius:15px;
-    box-shadow:0 5px 10px rgba(0,0,0,0.1);
+    border-radius:18px;
+    box-shadow:0 5px 20px rgba(215,116,166,0.15);
+    border:1px solid rgba(255,255,255,0.5);
 }
 
 .sonhos h3{
     font-family:'Dancing Script',cursive;
-    font-size:40px;
+    font-size:36px;
     text-align:center;
     margin-bottom:15px;
+    color:#4a2040;
 }
 
 .sonhos ul{
@@ -128,31 +173,49 @@ h1{
 
 .sonhos li{
     margin:10px 0;
-    font-size:18px;
+    font-size:16px;
+    color:#5a3050;
 }
 
 .sonhos li::before{
-    content:"♥ ";
-    color:#ff7da9;
+    content:"\2665 ";
+    color:#f06acb;
 }
 
-body::after{
-    content:"♡ ♡ ♡ ♡ ♡";
-    position:fixed;
-    top:120px;
-    right:100px;
-    color:#ff9bb7;
-    font-size:30px;
+/* NAVEGACAO MINIMALISTA */
+.nav-voltar{
+    display:flex;
+    justify-content:center;
+    margin-top:30px;
+}
+
+.nav-voltar a{
+    display:inline-block;
+    padding:12px 30px;
+    border:1px solid rgba(215,116,166,0.4);
+    border-radius:30px;
+    text-decoration:none;
+    color:#d774a6;
+    font-size:14px;
+    letter-spacing:0.5px;
+    transition:all 0.3s;
+    background:rgba(255,255,255,0.5);
+}
+
+.nav-voltar a:hover{
+    background:rgba(215,116,166,0.1);
+    border-color:#d774a6;
+    transform:translateY(-2px);
 }
 
 @media (max-width: 768px) {
     body {
-        padding: 10px;
+        padding: 15px;
     }
 
     .caderno {
-        padding: 20px;
-        border-radius: 15px;
+        padding: 25px;
+        border-radius: 18px;
     }
 
     .caderno::before {
@@ -160,7 +223,7 @@ body::after{
     }
 
     h1 {
-        font-size: 32px;
+        font-size: 30px;
         margin-bottom: 20px;
     }
 
@@ -174,15 +237,15 @@ body::after{
     }
 
     .texto h2 {
-        font-size: 36px;
+        font-size: 32px;
     }
 
     .texto span {
-        font-size: 48px;
+        font-size: 44px;
     }
 
     .texto p {
-        font-size: 16px;
+        font-size: 15px;
     }
 
     .lado-direito {
@@ -190,7 +253,7 @@ body::after{
     }
 
     .adesivo {
-        font-size: 80px;
+        font-size: 70px;
         margin: 20px 0;
     }
 
@@ -198,30 +261,30 @@ body::after{
         font-size: 28px;
     }
 
-    body::after {
+    body::before, body::after {
         display: none;
     }
 }
 
 @media (max-width: 480px) {
     body {
-        padding: 5px;
+        padding: 8px;
     }
 
     .caderno {
-        padding: 15px;
+        padding: 18px;
     }
 
     h1 {
-        font-size: 26px;
+        font-size: 24px;
     }
 
     .texto h2 {
-        font-size: 28px;
+        font-size: 26px;
     }
 
     .texto span {
-        font-size: 36px;
+        font-size: 34px;
     }
 
     .texto p {
