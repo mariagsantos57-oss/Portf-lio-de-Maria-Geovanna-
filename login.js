@@ -25,7 +25,7 @@ formLogin.addEventListener("submit", async function (event) {
         }
 
         localStorage.setItem("logado", "true");
-        window.location.href = "index.html";
+        window.location.href = "portfolio.html";
 
     } catch (erro) {
         console.error("Erro:", erro);
