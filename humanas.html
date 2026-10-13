@@ -1,13 +1,17 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Humanas</title>
     <link rel="stylesheet" href="humanas.css">
+    <script>
+        if (!localStorage.getItem("logado")) {
+            document.documentElement.innerHTML = '';
+            window.location.replace("index.html");
+        }
+    </script>
 </head>
-
 <body>
 
     <header>
@@ -16,22 +20,16 @@
 
     <main>
 
-        <!-- EIXO I -->
         <section class="eixo">
-            <h2>
-                <a href="./img/papel timbrado humanas.png" target="_blank">Eixo I</a>
-            </h2>
+            <h2><a href="./img/papel timbrado humanas.png" target="_blank">Eixo I</a></h2>
             <div class="atividades">
                 <img src="./img/papel timbrado humanas.png" alt="Atividade Eixo I">
                 <img src="./img/papel timbrado humanas1.png" alt="Atividade Eixo I">
             </div>
         </section>
 
-        <!-- EIXO II -->
         <section class="eixo">
-            <h2>
-                <a href="./img/papel timbrado (9).png" target="_blank">Eixo II</a>
-            </h2>
+            <h2><a href="./img/papel timbrado (9).png" target="_blank">Eixo II</a></h2>
             <div class="atividades">
                 <img src="./img/papel timbrado (9).png" alt="Atividade Eixo II">
                 <img src="./img/papel timbrado (18).png" alt="Atividade Eixo II">
@@ -40,12 +38,9 @@
                 <img src="./img/papel timbrado (28).png" alt="Atividade Eixo II">
             </div>
         </section>
-        
-        <!-- EIXO III -->
+
         <section class="eixo">
-            <h2>
-                <a href="./img/papel timbrado (9).png" target="_blank">Eixo III</a>
-            </h2>
+            <h2><a href="./img/papel timbrado (32).png" target="_blank">Eixo III</a></h2>
             <div class="atividades">
                 <img src="img/papel timbrado (32).png" alt="Atividade Eixo III">
                 <img src="img/papel timbrado (33).png" alt="Atividade Eixo III">
@@ -61,7 +56,6 @@
                 <img src="./img/atividade escolhida3.png" alt="Atividade escolhida 3">
                 <img src="./img/atividade escolhida4.png" alt="Atividade escolhida 4">
             </div>
-
             <div class="informacoes">
                 <p><strong>Professor:</strong> __________________________________</p>
                 <p><strong>Data:</strong> ____ / ____ / ________</p>
@@ -69,5 +63,10 @@
         </section>
 
     </main>
+
+    <div class="nav-voltar">
+        <a href="portfolio.html">Voltar ao Inicio</a>
+    </div>
+
 </body>
 </html>

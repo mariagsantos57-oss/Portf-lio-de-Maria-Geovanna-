@@ -1,94 +1,69 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
-
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio Maria Geovanna</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
 </head>
+
 <body>
 
-    <header>
-        <nav>
-            <a href="#">Sobre mim</a>
-            <a href="#">Contato</a>
-            <a href="historiadevida.html">História de Vida</a>
-            <a href="ppe.html">Plano de Estudos</a> 
-        </nav>
-    </header>
+    <div class="center">
 
-    <section class="hero">
-        <div class="foto">
-            <img src="img/Design_sem_nome__3_-removebg-preview.png" alt="Maria Geovanna">
-        </div>
-        <div class="texto">
-            <h2>Portfólio de</h2>
-            <h1>Geovanna</h1>
-            <p>A mais diva ♡</p>
-        </div>
-    </section>
+        <h1>Login</h1>
 
-    <section class="card">
-        <h2>SOBRE MIM</h2>
-        <p>
-           Meu nome é Maria Geovanna Ferreira dos Santos, sou estudante da 3ª série 
-           do Ensino Médio e curso Informática para Internet. Tenho interesse pela 
-           área de tecnologia e desenvolvimento web, buscando sempre aprender e 
-           desenvolver novas competências para meu crescimento profissional.
-        </p>
-    </section>
+        <form id="formLogin">
 
-    <section class="card">
-        <h2>CURSOS</h2>
-        <ul>
-            <li>Técnico em Informática para Internet</li>
-            <li>Propriedade Intelectual</li>
-        </ul>
-    </section>
+            <div class="txt_field">
+                <input type="email" id="email" required>
+                <label>E-mail</label>
+            </div>
 
-    <section class="redes">
-        <a href="[https://www.instagram.com/](https://www.instagram.com/)" target="_blank" rel="noopener noreferrer">
-            <img src="img/Instagram-Logo-PNG-Pic.png" alt="Instagram">
-            <p>Instagram</p>
-        </a>
+            <div class="txt_field">
+                <input type="password" id="senha" required>
+                <label>Senha</label>
+            </div>
 
-        <a href="[https://web.whatsapp.com/](https://web.whatsapp.com/)" target="_blank" rel="noopener noreferrer">
-            <img src="img/126341.png" alt="Whatsapp">
-            <p>Whatsapp</p>
-        </a>
+            <div class="esqueceu">
+                <a href="#">Esqueceu sua senha?</a>
+            </div>
 
-        <a href="[https://www.facebook.com/?locale=pt_BR](https://www.facebook.com/?locale=pt_BR)" target="_blank" rel="noopener noreferrer">
-            <img src="img/png-clipart-black-and-white-computer-icons-facebook-facebook-photography-room.png" alt="Facebook">
-            <p>Facebook</p>
-        </a>
-    </section>
+            <div class="botoes">
 
-    <section class="areas">
-        <h2>Áreas do conhecimento:</h2>
-        <ul class="lista-areas">
-            <li><a href="linguagens.html">Linguagens</a></li>
-            <li><a href="humanas.html">Humanas</a></li>
-            <li><a href="matemática.html">Matemática</a></li>
-            <li><a href="natureza.html">Natureza</a></li>
-            <li><a href="senai.html">Senai</a></li>
-        </ul>
-    </section>
+                <input
+                    type="submit"
+                    value="Conectar"
+                    class="btn-conectar"
+                >
 
-    <section class="frase-final">
-        <div class="card-frase">
-            <p>"A única forma de chegar no impossível é acreditar que é possível"</p>
-        </div>
-        <span>— Alice no País das Maravilhas ♡</span>
-    </section>
+                <input
+                    type="button"
+                    value="Cancelar"
+                    class="btn-cancelar"
+                    onclick="cancelar()"
+                >
 
-    <footer>
-        <p>© <span id="ano"></span> Maria Geovanna. Todos os direitos reservados.</p>
-        <p>Orientadores:</p>
-        <p>Cleiton Jericó</p>
-        <p>Regiane Leal</p>
-    </footer>
+            </div>
 
-    <script src="script.js"></script>
+            <div class="signup_link">
+
+                Nao e membro?
+
+                <a href="cadastro.html">
+                    Cadastre-se
+                </a>
+
+            </div>
+
+        </form>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script type="module" src="login.js"></script>
+
 </body>
+
 </html>

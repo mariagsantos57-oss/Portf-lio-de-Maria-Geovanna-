@@ -7,7 +7,12 @@
 <link rel="stylesheet" href="historiadevida.css">
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Dancing+Script:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-
+<script>
+    if (!localStorage.getItem("logado")) {
+        document.documentElement.innerHTML = '';
+        window.location.replace("index.html");
+    }
+</script>
 </head>
 <body>
 
@@ -83,8 +88,11 @@
 
     </div>
 
-</div>
+    <div class="nav-voltar">
+        <a href="portfolio.html">Voltar ao Inicio</a>
+    </div>
 
+</div>
 
 </body>
 </html>
