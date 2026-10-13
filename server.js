@@ -17,20 +17,24 @@ app.use(express.static(path.join(__dirname)));
 // ==========================================
 // CONEXÃO COM O BANCO DE DADOS MySQL
 // ==========================================
-const db = mysql.createConnection({
+const db = mysql.createPool({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
-    port: process.env.DB_PORT
+    port: process.env.DB_PORT,
+    waitForConnections: true,
+    connectionLimit: 10,
+    queueLimit: 0
 });
 
-db.connect((err) => {
+db.getConnection((err, conexao) => {
     if (err) {
         console.error("Erro ao conectar ao banco de dados:", err.message);
         return;
     }
     console.log("Conectado ao banco de dados MySQL com sucesso!");
+    conexao.release();
 });
 
 // ==========================================
@@ -52,6 +56,7 @@ app.post("/cadastro", async (req, res) => {
                 if (erro.code === "ER_DUP_ENTRY") {
                     return res.status(400).json({ mensagem: "E-mail já cadastrado." });
                 }
+                console.error("Erro ao cadastrar usuário:", erro);
                 return res.status(500).json({ mensagem: "Erro ao cadastrar usuário." });
             }
             res.status(201).json({ mensagem: "Cadastro realizado com sucesso!" });
