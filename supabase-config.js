@@ -1,8 +1,9 @@
-const SUPABASE_URL = "https://etptbehghrmofoaxhghp.supabase.co";
-const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_vayhdKabenv4NTFP7ePP_g_cSe1aaZH";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
-export const supabaseClient =
-    window.supabase.createClient(
-        SUPABASE_URL,
-        SUPABASE_PUBLISHABLE_KEY
-    );
+const supabaseUrl = "https://etptbehghrmofoaxhghp.supabase.co";
+const supabasePublishableKey = "sb_publishable_vayhdKabenv4NTFP7ePP_g_cSe1aaZH";
+
+export const supabaseClient = createClient(
+    supabaseUrl,
+    supabasePublishableKey
+);

@@ -1,4 +1,4 @@
-import { supabaseClient } from './supabase-config.js';
+import { supabaseClient } from "./supabase-config.js";
 
 const formCadastro = document.getElementById("formCadastro");
 
@@ -16,33 +16,36 @@ formCadastro.addEventListener("submit", async function (event) {
 
     try {
         const { data, error } = await supabaseClient.auth.signUp({
-            email,
+            email: email,
             password: senha,
             options: {
                 data: {
-                    nome
-                }
+                    nome: nome
+                },
+                emailRedirectTo:
+                    "https://mariagsantos57-oss.github.io/Portf-lio-de-Maria-Geovanna-/login.html"
             }
         });
 
         if (error) {
-            if (error.message.includes("already")) {
-                alert("E-mail já cadastrado.");
-            } else {
-                alert("Erro ao cadastrar: " + error.message);
-            }
+            alert("Erro no cadastro: " + error.message);
             return;
         }
 
-        alert("Cadastro realizado com sucesso!");
-        window.location.href = "index.html";
+        if (data.session) {
+            alert("Cadastro realizado com sucesso!");
+        } else {
+            alert("Cadastro realizado! Confira seu e-mail para confirmar a conta.");
+        }
+
+        window.location.href = "login.html";
 
     } catch (erro) {
-        console.error("Erro:", erro);
-        alert("Não foi possível conectar. Tente novamente.");
+        console.error(erro);
+        alert("Não foi possível conectar ao Supabase.");
     }
 });
 
 window.cancelar = function () {
-    window.location.href = "index.html";
-};
+    window.location.href = "login.html";
+}

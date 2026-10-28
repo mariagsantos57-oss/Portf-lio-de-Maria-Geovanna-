@@ -1,6 +1,6 @@
-import { supabaseClient } from './supabase-config.js';
+import { supabaseClient } from "./supabase-config.js";
 
-const formLogin = document.querySelector("form");
+const formLogin = document.getElementById("formLogin");
 
 formLogin.addEventListener("submit", async function (event) {
     event.preventDefault();
@@ -14,26 +14,26 @@ formLogin.addEventListener("submit", async function (event) {
     }
 
     try {
-        const { data, error } = await supabaseClient.auth.signInWithPassword({
-            email,
-            password: senha
-        });
+        const { error } = await supabaseClient.auth
+            .signInWithPassword({
+                email: email,
+                password: senha
+            });
 
         if (error) {
-            alert("E-mail ou senha incorretos.");
+            alert("Erro ao entrar: " + error.message);
             return;
         }
 
-        localStorage.setItem("logado", "true");
-        window.location.href = "portfolio.html";
+        alert("Login realizado com sucesso!");
+        window.location.href = "index.html";
 
     } catch (erro) {
-        console.error("Erro:", erro);
-        alert("Não foi possível conectar. Tente novamente.");
+        console.error(erro);
+        alert("Não foi possível conectar ao Supabase.");
     }
 });
 
 window.cancelar = function () {
-    document.getElementById("email").value = "";
-    document.getElementById("senha").value = "";
-};
+    window.location.href = "index.html";
+}
