@@ -26,7 +26,7 @@ formLogin.addEventListener("submit", async function (event) {
         }
 
         alert("Login realizado com sucesso!");
-        window.location.href = "index.html";
+        window.location.href = "portfolio.html";
 
     } catch (erro) {
         console.error(erro);

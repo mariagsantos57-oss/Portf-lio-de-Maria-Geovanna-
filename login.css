@@ -1,3 +1,4 @@
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -5,7 +6,7 @@
 }
 
 body {
-    font-family: 'Georgia', serif;
+    font-family: Georgia, serif;
     background: linear-gradient(135deg, #fce4f3 0%, #f8b4d9 50%, #f06acb 100%);
     min-height: 100vh;
     display: flex;
@@ -14,7 +15,7 @@ body {
     padding: 20px;
 }
 
-/* ELEMENTO DECORATIVO MINIMALISTA */
+/* Decoração do fundo */
 body::before {
     content: "";
     position: fixed;
@@ -39,11 +40,11 @@ body::after {
     z-index: 0;
 }
 
+/* Caixa do login */
 .center {
-    width: 90%;
+    width: 100%;
     max-width: 420px;
     background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(20px);
     border-radius: 20px;
     padding: 40px 36px;
     box-shadow: 0 8px 40px rgba(215, 116, 166, 0.25);
@@ -52,7 +53,6 @@ body::after {
     border: 1px solid rgba(255, 255, 255, 0.6);
 }
 
-/* LINHA DECORATIVA SUPERIOR */
 .center::before {
     content: "";
     display: block;
@@ -66,18 +66,18 @@ body::after {
 .center h1 {
     text-align: center;
     font-size: 28px;
-    font-weight: 400;
+    font-weight: normal;
     color: #4a2040;
-    padding: 0 0 20px;
+    padding-bottom: 20px;
     border-bottom: 1px solid rgba(215, 116, 166, 0.2);
     letter-spacing: 1px;
 }
 
+/* Campos */
 form .txt_field {
     position: relative;
     border-bottom: 2px solid rgba(215, 116, 166, 0.3);
     margin: 28px 0;
-    transition: border-color 0.3s;
 }
 
 form .txt_field:focus-within {
@@ -86,14 +86,14 @@ form .txt_field:focus-within {
 
 .txt_field input {
     width: 100%;
-    padding: 0 5px;
     height: 42px;
+    padding: 0 5px;
     font-size: 16px;
     border: none;
-    background: none;
+    background: transparent;
     outline: none;
     color: #4a2040;
-    font-family: 'Georgia', serif;
+    font-family: Georgia, serif;
 }
 
 .txt_field label {
@@ -114,6 +114,7 @@ form .txt_field:focus-within {
     color: #d774a6;
 }
 
+/* Esqueci minha senha */
 .esqueceu {
     text-align: right;
     margin-top: -12px;
@@ -124,13 +125,13 @@ form .txt_field:focus-within {
     color: #d774a6;
     text-decoration: none;
     font-size: 13px;
-    transition: color 0.3s;
 }
 
 .esqueceu a:hover {
     color: #f06acb;
 }
 
+/* Botões */
 .botoes {
     display: flex;
     gap: 12px;
@@ -140,15 +141,14 @@ form .txt_field:focus-within {
 
 .botoes input {
     flex: 1;
+    min-width: 0;
     height: 46px;
     border-radius: 12px;
     font-weight: 600;
     font-size: 15px;
     cursor: pointer;
-    outline: none;
-    transition: all 0.3s;
-    font-family: 'Georgia', serif;
-    letter-spacing: 0.5px;
+    font-family: Georgia, serif;
+    transition: 0.3s;
 }
 
 .btn-conectar {
@@ -160,7 +160,6 @@ form .txt_field:focus-within {
 
 .btn-conectar:hover {
     background: linear-gradient(135deg, #e85cb8, #c56a9a);
-    box-shadow: 0 6px 20px rgba(240, 106, 203, 0.4);
     transform: translateY(-1px);
 }
 
@@ -172,11 +171,11 @@ form .txt_field:focus-within {
 
 .btn-cancelar:hover {
     background: rgba(215, 116, 166, 0.08);
-    border-color: rgba(215, 116, 166, 0.5);
 }
 
+/* Link para cadastro */
 .signup_link {
-    margin: 25px 0 0;
+    margin-top: 25px;
     text-align: center;
     font-size: 14px;
     color: #b07a9a;
@@ -186,14 +185,13 @@ form .txt_field:focus-within {
     text-decoration: none;
     color: #d774a6;
     font-weight: 600;
-    transition: color 0.3s;
 }
 
 .signup_link a:hover {
     color: #f06acb;
 }
 
-/* RESPONSIVO */
+/* Ajuste para celulares */
 @media (max-width: 480px) {
     .center {
         padding: 30px 24px;
@@ -210,5 +208,6 @@ form .txt_field:focus-within {
 
     .botoes input {
         width: 100%;
+        flex: auto;
     }
 }
