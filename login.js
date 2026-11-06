@@ -14,19 +14,28 @@ formLogin.addEventListener("submit", async function (event) {
     }
 
     try {
-        const { error } = await supabaseClient.auth
-            .signInWithPassword({
-                email: email,
-                password: senha
-            });
+        const { data, error } = await supabaseClient.auth.signInWithPassword({
+            email: email,
+            password: senha
+        });
 
         if (error) {
             alert("Erro ao entrar: " + error.message);
             return;
         }
 
+        if (!data.session) {
+            alert("Não foi possível iniciar sua sessão.");
+            return;
+        }
+
+        // Salva que o usuário realizou o login
+        localStorage.setItem("logado", "true");
+
         alert("Login realizado com sucesso!");
-        window.location.href = "portfolio.html";
+
+        // Redireciona para o portfólio
+        window.location.href = "./portfolio.html";
 
     } catch (erro) {
         console.error(erro);
@@ -34,6 +43,7 @@ formLogin.addEventListener("submit", async function (event) {
     }
 });
 
+// Botão cancelar
 window.cancelar = function () {
     window.location.href = "index.html";
-}
+};
