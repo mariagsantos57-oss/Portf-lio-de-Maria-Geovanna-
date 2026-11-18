@@ -1,0 +1,101 @@
+.identificacao{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:80px;
+    padding:60px 40px;
+    position:relative;
+    z-index:1;
+}
+
+.identificacao .info{
+    width:100%;
+    max-width:620px;
+}
+
+.identificacao h1{
+    color:white;
+    font-size:44px;
+    margin-bottom:40px;
+}
+
+.identificacao dl{
+    margin:0;
+}
+
+.identificacao .linha{
+    margin-bottom:26px;
+}
+
+.identificacao dt{
+    color:rgba(255,255,255,0.65);
+    font-size:13px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    margin-bottom:6px;
+}
+
+.identificacao dd{
+    color:white;
+    font-size:22px;
+    line-height:1.4;
+    margin:0;
+}
+
+.identificacao .foto{
+    width:360px;
+    height:360px;
+    flex-shrink:0;
+    padding:12px;
+    border:1px solid rgba(255,255,255,0.45);
+    background:rgba(255,255,255,0.08);
+    box-shadow:0 12px 35px rgba(0,0,0,0.15);
+}
+
+.identificacao .foto img{
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.identificacao .voltar{
+    display:inline-block;
+    margin-top:30px;
+    padding:12px 30px;
+    border:1px solid rgba(255,255,255,0.35);
+    border-radius:30px;
+    text-decoration:none;
+    color:white;
+    font-size:14px;
+    background:rgba(255,255,255,0.08);
+    transition:all 0.3s;
+}
+
+.identificacao .voltar:hover{
+    background:rgba(255,255,255,0.18);
+    border-color:rgba(255,255,255,0.6);
+}
+
+@media (max-width:768px){
+    .identificacao{
+        flex-direction:column;
+        gap:40px;
+        padding:40px 20px;
+    }
+
+    .identificacao h1{
+        font-size:30px;
+        text-align:center;
+    }
+
+    .identificacao dd{
+        font-size:18px;
+    }
+
+    .identificacao .foto{
+        width:280px;
+        height:280px;
+    }
+}

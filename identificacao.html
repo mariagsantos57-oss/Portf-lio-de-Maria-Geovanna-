@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identificação Pessoal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="identificacao.css">
+    <script>
+        if (!localStorage.getItem("logado")) {
+            document.documentElement.innerHTML = '';
+            window.location.replace("index.html");
+        }
+    </script>
+</head>
+<body>
+    <main class="identificacao">
+        <div class="info">
+            <h1>Identificação Pessoal</h1>
+
+            <dl>
+                <div class="linha">
+                    <dt>Nome</dt>
+                    <dd>Maria Geovanna Ferreira Dos Santos</dd>
+                </div>
+
+                <div class="linha">
+                    <dt>Data de nascimento</dt>
+                    <dd>17/02/2009</dd>
+                </div>
+
+                <div class="linha">
+                    <dt>Filiação</dt>
+                    <dd>Claudivania Ferreira Jorge e Gilvan Francisco Dos Santos</dd>
+                </div>
+
+                <div class="linha">
+                    <dt>Endereço</dt>
+                    <dd>Avenida Senador Helvídeo Nunes</dd>
+                </div>
+
+                <div class="linha">
+                    <dt>Telefone</dt>
+                    <dd>(89) 999456-3660</dd>
+                </div>
+            </dl>
+
+            <a href="portfolio.html" class="voltar">Voltar ao Inicio</a>
+        </div>
+
+        <div class="foto">
+            <img src="img/Design sem nome (7).png" alt="Foto de Maria Geovanna">
+        </div>
+    </main>
+</body>
+</html>
