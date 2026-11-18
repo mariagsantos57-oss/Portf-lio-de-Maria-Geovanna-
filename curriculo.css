@@ -1,0 +1,158 @@
+.curriculo{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    padding:60px 20px;
+    position:relative;
+    z-index:1;
+}
+
+.curriculo .folha{
+    width:100%;
+    max-width:800px;
+    background:#fff;
+    padding:60px 70px;
+    box-shadow:0 20px 60px rgba(0,0,0,0.18);
+    font-family:Arial, Helvetica, sans-serif;
+    color:#1a1a1a;
+}
+
+.curriculo .voltar{
+    display:inline-block;
+    margin-bottom:40px;
+    color:#a34d78;
+    text-decoration:none;
+    font-size:13px;
+    letter-spacing:0.5px;
+}
+
+.curriculo .voltar:hover{
+    text-decoration:underline;
+}
+
+.curriculo .cabecalho{
+    text-align:center;
+    padding-bottom:28px;
+    border-bottom:2px solid #1a1a1a;
+}
+
+.curriculo .cabecalho h1{
+    font-size:24px;
+    letter-spacing:1px;
+    font-weight:700;
+    line-height:1.4;
+    margin-bottom:22px;
+}
+
+.curriculo .contatos{
+    list-style:none;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px 28px;
+}
+
+.curriculo .contatos li{
+    display:flex;
+    align-items:center;
+    gap:7px;
+    font-size:13px;
+    color:#333;
+}
+
+.curriculo .contatos svg{
+    width:15px;
+    height:15px;
+    fill:#a34d78;
+    flex-shrink:0;
+}
+
+.curriculo .secao{
+    margin-top:34px;
+}
+
+.curriculo .secao h2{
+    font-size:15px;
+    font-weight:700;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    padding-bottom:8px;
+    border-bottom:1px solid #bbb;
+    margin-bottom:14px;
+}
+
+.curriculo .secao p,
+.curriculo .lista li{
+    font-size:14px;
+    line-height:1.7;
+    color:#2b2b2b;
+}
+
+.curriculo .secao p + p{
+    margin-top:6px;
+}
+
+.curriculo .secao .destaque{
+    font-weight:700;
+}
+
+.curriculo .lista{
+    list-style:none;
+}
+
+.curriculo .lista li{
+    position:relative;
+    padding-left:18px;
+    margin-bottom:6px;
+}
+
+.curriculo .lista li::before{
+    content:"";
+    position:absolute;
+    left:2px;
+    top:10px;
+    width:5px;
+    height:5px;
+    background:#a34d78;
+    border-radius:50%;
+}
+
+@media (max-width:768px){
+    .curriculo{
+        padding:24px 12px;
+    }
+
+    .curriculo .folha{
+        padding:32px 22px;
+    }
+
+    .curriculo .cabecalho h1{
+        font-size:19px;
+    }
+
+    .curriculo .contatos{
+        flex-direction:column;
+        align-items:center;
+        gap:8px;
+    }
+}
+
+@media print{
+    body{
+        background:#fff;
+    }
+
+    .curriculo{
+        padding:0;
+    }
+
+    .curriculo .folha{
+        box-shadow:none;
+        max-width:100%;
+    }
+
+    .curriculo .voltar{
+        display:none;
+    }
+}

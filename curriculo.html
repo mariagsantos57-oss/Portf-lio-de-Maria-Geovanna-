@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Currículo e Objetivos</title>
+    <title>Currículo - Maria Geovanna</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="curriculo.css">
     <script>
         if (!localStorage.getItem("logado")) {
             document.documentElement.innerHTML = '';
@@ -13,26 +14,62 @@
     </script>
 </head>
 <body>
-    <section>
-        <main>
-            <h2 style="color:white; text-align:center; margin-top:40px; font-size:32px;">Currículo e Objetivos</h2>
+    <main class="curriculo" id="curriculo">
+        <div class="folha">
+            <a href="portfolio.html" class="voltar">&larr; Voltar ao Início</a>
 
-            <div class="card" id="curriculo" style="max-width:700px; margin:30px auto;">
-                <h2>Currículo</h2>
-                <p><strong>Ensino Médio:</strong> Informática para Internet - SESI/SENAI (em andamento)</p>
-                <p><strong>Ensino Fundamental:</strong> Escola Éden, Joaquim Nicolau e SESI</p>
-                <p><strong>Conquista:</strong> Bolsa de estudos obtida no 9º ano</p>
-            </div>
+            <header class="cabecalho">
+                <h1>MARIA GEOVANNA FERREIRA DOS SANTOS</h1>
 
-            <div class="card" id="objetivos" style="max-width:700px; margin:30px auto;">
-                <h2>Objetivos</h2>
-                <p>Cursar Letras na UFPI ou Direito na RSA/UESPI e seguir construindo uma trajetória de sucesso.</p>
-            </div>
+                <ul class="contatos">
+                    <li>
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.24 1z"/></svg>
+                        <span>(89) 99456-3660</span>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2zm2 .7V6l8 5.6L18 6v-.3zM20 8.2l-8 5.6-8-5.6V19h16z"/></svg>
+                        <span>mariageovannafs0817@gmail.com</span>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.1 21 10h-2v11h-5v-6h-4v6H5V10H3zm0 2.5L6 11.2V19h2v-6h8v6h2v-7.8z"/></svg>
+                        <span>Paraibinha, 7298, Picos-Pi</span>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0-2a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 3c-4.4 0-8 2.7-8 6v3h16v-3c0-3.3-3.6-6-8-6zm-6 7c0-1.9 2.7-4 6-4s6 2.1 6 4z"/></svg>
+                        <span>17 anos</span>
+                    </li>
+                </ul>
+            </header>
 
-            <div style="text-align:center; margin-top:30px;">
-                <a href="portfolio.html" style="display:inline-block; padding:12px 30px; border:1px solid rgba(255,255,255,0.35); border-radius:30px; text-decoration:none; color:white; font-size:14px; background:rgba(255,255,255,0.08); transition:all 0.3s;">Voltar ao Inicio</a>
-            </div>
-        </main>
-    </section>
+            <section class="secao" id="objetivos">
+                <h2>OBJETIVOS PROFISSIONAIS</h2>
+                <p>Busco minha primeira oportunidade de emprego como Jovem Aprendiz, visando desenvolver habilidades profissionais e contribuir com dedicação e vontade de aprender para o crescimento da empresa.</p>
+            </section>
+
+            <section class="secao">
+                <h2>FORMAÇÃO</h2>
+                <p class="destaque">2026 - Cursando 3° série do Ensino Médio</p>
+                <p>ESCOLA sesi Wilma catão araújo (turno: tarde)</p>
+            </section>
+
+            <section class="secao">
+                <h2>QUALIFICAÇÕES</h2>
+                <ul class="lista">
+                    <li>Facilidade em trabalhar em equipe e boa comunicação, colaborando de forma eficaz em ambientes de trabalho;</li>
+                    <li>Habilidade em organização e pontualidade;</li>
+                    <li>Vontade de aprender e desenvolver novas competências, com disposição para adquirir novos conhecimentos;</li>
+                    <li>Conhecimento básico em digitalização de documentos.</li>
+                </ul>
+            </section>
+
+            <section class="secao">
+                <h2>CURSOS</h2>
+                <ul class="lista">
+                    <li>Cursando Informática para Internet - Senai</li>
+                    <li>Curso de Propriedade Intelectual - 2024 - Senai</li>
+                </ul>
+            </section>
+        </div>
+    </main>
 </body>
 </html>
