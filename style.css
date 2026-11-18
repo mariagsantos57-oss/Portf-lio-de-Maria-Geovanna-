@@ -218,7 +218,8 @@ nav a.sair:hover{
     margin: 0;
 }
 
-.lista-areas a{
+.lista-areas a,
+.lista-areas span{
     display: inline-block;
     width: 170px;
     padding: 14px;
@@ -233,7 +234,8 @@ nav a.sair:hover{
     letter-spacing:0.5px;
 }
 
-.lista-areas a:hover{
+.lista-areas a:hover,
+.lista-areas span:hover{
     background:rgba(255,255,255,0.18);
     border-color:rgba(255,255,255,0.6);
     transform:translateY(-2px);
@@ -565,7 +567,8 @@ footer{
         gap: 10px;
     }
 
-    .lista-areas a {
+    .lista-areas a,
+    .lista-areas span {
         width: 150px;
         padding: 12px;
         font-size: 13px;
@@ -662,7 +665,8 @@ footer{
         width: 100%;
     }
 
-    .lista-areas a {
+    .lista-areas a,
+    .lista-areas span {
         width: 130px;
         padding: 10px;
         font-size: 12px;
