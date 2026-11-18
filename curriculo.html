@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identificação Pessoal e Currículo</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        if (!localStorage.getItem("logado")) {
+            document.documentElement.innerHTML = '';
+            window.location.replace("index.html");
+        }
+    </script>
+</head>
+<body>
+    <section>
+        <main>
+            <h2 style="color:white; text-align:center; margin-top:40px; font-size:32px;">Identificação Pessoal e Currículo</h2>
+
+            <div class="card" style="max-width:700px; margin:30px auto;">
+                <h2>Identificação Pessoal</h2>
+                <p><strong>Nome:</strong> Maria Geovanna Ferreira dos Santos</p>
+                <p><strong>Nascimento:</strong> 17/02/2009 - Hospital Regional Justino Luz</p>
+                <p><strong>Residência:</strong> Paraibinha</p>
+                <p><strong>WhatsApp:</strong> (89) 99997-1521</p>
+                <p><strong>E-mail:</strong> maria.g.santos57@gmail.com</p>
+            </div>
+
+            <div class="card" style="max-width:700px; margin:30px auto;">
+                <h2>Formação</h2>
+                <p><strong>Ensino Médio:</strong> Informática para Internet - SESI/SENAI (em andamento)</p>
+                <p><strong>Ensino Fundamental:</strong> Escola Éden, Joaquim Nicolau e SESI</p>
+                <p><strong>Conquista:</strong> Bolsa de estudos obtida no 9º ano</p>
+            </div>
+
+            <div class="card" style="max-width:700px; margin:30px auto;">
+                <h2>Objetivos</h2>
+                <p>Cursar Letras na UFPI ou Direito na RSA/UESPI e seguir construindo uma trajetória de sucesso.</p>
+            </div>
+
+            <div style="text-align:center; margin-top:30px;">
+                <a href="portfolio.html" style="display:inline-block; padding:12px 30px; border:1px solid rgba(255,255,255,0.35); border-radius:30px; text-decoration:none; color:white; font-size:14px; background:rgba(255,255,255,0.08); transition:all 0.3s;">Voltar ao Inicio</a>
+            </div>
+        </main>
+    </section>
+</body>
+</html>
