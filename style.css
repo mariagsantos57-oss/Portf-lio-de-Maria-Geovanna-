@@ -245,26 +245,31 @@ nav a.sair:hover{
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
-    gap:20px;
-    margin-top:20px;
+    gap:12px;
+    margin:20px 0 0 0;
     width:100%;
 }
 
 .card-eixo{
-    width:220px;
-    padding:16px;
+    display:inline-block;
+    width:170px;
+    padding:14px;
     border:1px solid rgba(255,255,255,0.35);
-    border-radius:20px;
+    border-radius:30px;
+    text-decoration:none;
+    color:white;
     background:rgba(255,255,255,0.08);
     backdrop-filter:blur(5px);
-    text-align:center;
     transition:all 0.3s;
+    text-align:center;
+    font-size:14px;
+    letter-spacing:0.5px;
 }
 
 .card-eixo:hover{
     background:rgba(255,255,255,0.18);
     border-color:rgba(255,255,255,0.6);
-    transform:translateY(-3px);
+    transform:translateY(-2px);
 }
 
 .card-eixo img{
@@ -616,11 +621,11 @@ footer{
     }
 
     .cards-eixos {
-        gap: 14px;
+        gap: 10px;
     }
 
     .card-eixo {
-        width: 160px;
+        width: 150px;
         padding: 12px;
     }
 
