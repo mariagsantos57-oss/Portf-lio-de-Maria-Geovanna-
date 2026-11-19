@@ -241,52 +241,6 @@ nav a.sair:hover{
     transform:translateY(-2px);
 }
 
-.cards-eixos{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:12px;
-    margin:20px 0 0 0;
-    width:100%;
-}
-
-.card-eixo{
-    display:inline-block;
-    width:170px;
-    padding:14px;
-    border:1px solid rgba(255,255,255,0.35);
-    border-radius:30px;
-    text-decoration:none;
-    color:white;
-    background:rgba(255,255,255,0.08);
-    backdrop-filter:blur(5px);
-    transition:all 0.3s;
-    text-align:center;
-    font-size:14px;
-    letter-spacing:0.5px;
-}
-
-.card-eixo:hover{
-    background:rgba(255,255,255,0.18);
-    border-color:rgba(255,255,255,0.6);
-    transform:translateY(-2px);
-}
-
-.card-eixo img{
-    width:100%;
-    height:180px;
-    object-fit:cover;
-    border-radius:12px;
-    margin-bottom:14px;
-}
-
-.card-eixo h3{
-    color:white;
-    font-size:18px;
-    font-weight:400;
-    letter-spacing:0.5px;
-}
-
 footer{
     text-align: center;
     padding: 30px;
@@ -620,19 +574,6 @@ footer{
         font-size: 13px;
     }
 
-    .cards-eixos {
-        gap: 10px;
-    }
-
-    .card-eixo {
-        width: 150px;
-        padding: 12px;
-    }
-
-    .card-eixo img {
-        height: 140px;
-    }
-
     /* FRASE FINAL */
 
     .frase-final {
@@ -729,19 +670,6 @@ footer{
         width: 130px;
         padding: 10px;
         font-size: 12px;
-    }
-
-    .card-eixo {
-        width: 130px;
-        padding: 10px;
-    }
-
-    .card-eixo img {
-        height: 110px;
-    }
-
-    .card-eixo h3 {
-        font-size: 15px;
     }
 
     .card-frase {
