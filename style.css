@@ -684,3 +684,81 @@ footer{
         font-size: 12px;
     }
 }
+
+/* CONSIDERAÇÕES FINAIS E REFERÊNCIAS */
+
+.secao-final {
+    width: 90%;
+    margin: 60px auto 25px;
+    padding: 25px 7%;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 30px;
+
+    color: white;
+    box-sizing: border-box;
+}
+
+.coluna-final {
+    width: 50%;
+}
+
+.coluna-final h2 {
+    font-family: Georgia, serif;
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.coluna-final hr {
+    border: none;
+    border-top: 2px solid rgba(255, 255, 255, 0.8);
+    margin-bottom: 12px;
+}
+
+.coluna-final p,
+.coluna-final li {
+    font-family: Georgia, serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.coluna-final ul {
+    padding-left: 25px;
+}
+
+.divisoria-final {
+    width: 2px;
+    height: 155px;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 768px) {
+
+    .secao-final {
+        flex-direction: column;
+        padding: 25px;
+        gap: 25px;
+    }
+
+    .coluna-final {
+        width: 100%;
+    }
+
+    .coluna-final h2 {
+        font-size: 24px;
+    }
+
+    .divisoria-final {
+        width: 100%;
+        height: 1px;
+    }
+
+}
